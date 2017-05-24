@@ -43,11 +43,11 @@ public class RestAdapter {
             }
             else{
                 // Error
-                Log.e(TAG, "Http error code in getTours(): " + response.code());
+                Log.e(TAG, "Http error code in updateTours(): " + response.code());
             }
         }
         catch (Exception e) {
-            Log.e(TAG, "Unknown error at getTours()", e);
+            Log.e(TAG, "Unknown error at updateTours()", e);
         }
         return null;
     }

@@ -1,4 +1,4 @@
-package com.populi.testapp;
+package com.populi.testapp.helpers;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -31,7 +31,7 @@ public class ToursAdapter extends RecyclerView.Adapter<TourHolder>{
 
     @Override
     public TourHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         return new TourHolder(inflater.inflate(R.layout.view_item_tour, parent, false));
     }
 

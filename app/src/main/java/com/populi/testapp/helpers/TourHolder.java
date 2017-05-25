@@ -1,4 +1,4 @@
-package com.populi.testapp;
+package com.populi.testapp.helpers;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.populi.testapp.TourDetailActivity;
 import com.populi.testapp.internal.model.Tour;
 import com.populi.testapp.testapplication.R;
 

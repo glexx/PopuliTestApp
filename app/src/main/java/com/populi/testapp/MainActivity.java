@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.populi.testapp.helpers.ToursAdapter;
 import com.populi.testapp.internal.DataManager;
 import com.populi.testapp.internal.model.Tour;
 import com.populi.testapp.testapplication.R;

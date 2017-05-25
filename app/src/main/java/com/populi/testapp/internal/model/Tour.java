@@ -1,4 +1,4 @@
-package com.populi.testapp.testapplication.internal.network;
+package com.populi.testapp.internal.model;
 
 
 /**
@@ -6,12 +6,15 @@ package com.populi.testapp.testapplication.internal.network;
  */
 
 public class Tour {
-    String uid;
-    String title;
-    String image;
-    String desc;
 
-    City city;
+    // Serialized fields
+    private String uid;
+    private String title;
+    private String image;
+    private String desc;
+
+    // Other fields
+    private City city;
 
     public String getUid() {
         return uid;

@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.3"
     defaultConfig {
-        applicationId "com.populi.testapp.testapplication"
+        applicationId "com.populi.testapp"
         minSdkVersion 9
         targetSdkVersion 25
         versionCode 1
@@ -23,6 +23,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile  'com.squareup.retrofit2:converter-scalars:2.1.0'
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
 
     compile 'com.android.support:recyclerview-v7:25.3.1'

@@ -1,4 +1,4 @@
-package com.populi.testapp.testapplication;
+package com.populi.testapp;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,8 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.populi.testapp.testapplication.internal.DataManager;
-import com.populi.testapp.testapplication.internal.network.Tour;
+import com.populi.testapp.internal.DataManager;
+import com.populi.testapp.internal.model.Tour;
+import com.populi.testapp.testapplication.R;
 
 public class TourDetailActivity extends AppCompatActivity {
 

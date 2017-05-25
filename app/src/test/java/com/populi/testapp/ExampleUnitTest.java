@@ -1,4 +1,4 @@
-package com.populi.testapp.testapplication;
+package com.populi.testapp;
 
 import org.junit.Test;
 

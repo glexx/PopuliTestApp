@@ -1,4 +1,4 @@
-package com.populi.testapp.testapplication.internal.network;
+package com.populi.testapp.internal.rest;
 
 import android.util.Log;
 

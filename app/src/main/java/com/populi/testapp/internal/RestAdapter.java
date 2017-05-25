@@ -1,45 +1,41 @@
-package com.populi.testapp.testapplication.internal.network;
+package com.populi.testapp.internal;
 
 import android.util.Log;
 
+import com.populi.testapp.internal.rest.LoggingInterceptor;
+import com.populi.testapp.internal.rest.Services;
 import com.populi.testapp.testapplication.BuildConfig;
-import com.populi.testapp.testapplication.Constants;
+import com.populi.testapp.Constants;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 /**
  * Created by Alexander Gavrikov.
  */
 
 public class RestAdapter {
+
     private static final String TAG = "RestAdapter";
-    private static RestAdapter mInstance = new RestAdapter();
 
-    private Retrofit retrofit;
-
-    public static RestAdapter getInstance() {
-        return mInstance;
+    public RestAdapter() {
     }
 
-    private RestAdapter() {
-    }
-
-    public List<Country> getTours(){
+    public String getTours(){
         Retrofit retrofit = getRetrofit();
         Services service = retrofit.create(Services.class);
 
         try {
-            Response<List<Country>> response = service.getTours().execute();
+            Response response = service.getTours().execute();
 
             if (response.code() == 200) {
                 // Successful
-                return response.body();
+                return response.body().toString();
             }
             else{
                 // Error
@@ -70,6 +66,7 @@ public class RestAdapter {
                 new Retrofit.Builder()
                         .baseUrl(Constants.URL)
                         .client(client)
+                        .addConverterFactory(ScalarsConverterFactory.create())
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
 

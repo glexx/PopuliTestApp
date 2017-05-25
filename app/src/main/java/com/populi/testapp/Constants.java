@@ -1,4 +1,4 @@
-package com.populi.testapp.testapplication;
+package com.populi.testapp;
 
 /**
  * Created by Alexander Gavrikov.

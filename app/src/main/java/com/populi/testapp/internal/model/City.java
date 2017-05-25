@@ -1,4 +1,5 @@
-package com.populi.testapp.testapplication.internal.network;
+package com.populi.testapp.internal.model;
+
 
 import java.util.List;
 
@@ -7,12 +8,14 @@ import java.util.List;
  */
 
 public class City {
-    public String id;
-    public String name;
-    public List<Tour> tours;
 
+    // Serialized fields
+    private String id;
+    private String name;
+    private List<Tour> tours;
+
+    // Other fields
     private Country country;
-
 
     public String getId() {
         return id;

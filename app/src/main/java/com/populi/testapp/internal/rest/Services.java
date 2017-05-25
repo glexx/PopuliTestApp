@@ -1,7 +1,4 @@
-package com.populi.testapp.testapplication.internal.network;
-
-
-import java.util.List;
+package com.populi.testapp.internal.rest;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -12,5 +9,5 @@ import retrofit2.http.GET;
 public interface Services {
 
     @GET("code_challenge/countries_v1.json")
-    Call<List<Country>> getTours();
+    Call<String> getTours();
 }

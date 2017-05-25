@@ -1,4 +1,4 @@
-package com.populi.testapp.testapplication;
+package com.populi.testapp;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,7 +7,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.populi.testapp.testapplication.internal.network.Tour;
+import com.populi.testapp.internal.model.Tour;
+import com.populi.testapp.testapplication.R;
 
 /**
  * Created by Alexander Gavrikov.

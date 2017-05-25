@@ -2,5 +2,6 @@
     <string name="app_name">TestApplication</string>
 
     <string name="tours_error">Unable to resolve Tours</string>
+    <string name="tours_successful">Tours is updated</string>
     <string name="tours_refresh">Refresh tours</string>
 </resources>

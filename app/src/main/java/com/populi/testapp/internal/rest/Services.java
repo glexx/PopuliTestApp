@@ -8,6 +8,6 @@ import retrofit2.http.GET;
  */
 public interface Services {
 
-    @GET("code_challenge/countries_v1.json")
+    @GET("code_challenge/countries_v2.json")
     Call<String> getTours();
 }

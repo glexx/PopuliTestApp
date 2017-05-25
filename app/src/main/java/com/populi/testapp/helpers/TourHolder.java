@@ -44,7 +44,7 @@ public class TourHolder extends RecyclerView.ViewHolder{
     void bindTour(Tour tour){
         this.tour = tour;
 
-        titleView.setText(tour.getTitle());
+        titleView.setText(tour.getUid() + ". " + tour.getTitle());
         locationView.setText(tour.getCountry().getName() + ", " + tour.getCity().getName());
 
         // TODO: implement loading icons with Picasso

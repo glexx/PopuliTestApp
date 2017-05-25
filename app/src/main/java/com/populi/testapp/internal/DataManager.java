@@ -26,7 +26,7 @@ import java.util.List;
  * Created by Alexander Gavrikov.
  */
 
-public final class DataManager {
+public class DataManager {
 
     private static final String TAG = "DataManager";
     private static final String TOURS_FILE_NAME = "tours.dat";
@@ -36,7 +36,6 @@ public final class DataManager {
     private HashMap<String, Tour> tours = new HashMap<>();
     private List<Country> dataTree;
     private Context context;
-    private volatile boolean isInProgress;
     private static TaskUpdateTours taskUpdateTours;
     private OnToursReadyListener taskUpdateToursListener;
 
@@ -44,14 +43,15 @@ public final class DataManager {
         void onToursUpdate(boolean result);
     }
 
+
     public static DataManager getInstance() {
         return instance;
     }
 
     public void initialize(Context context){
-        this.context = context;
+        this.context = context.getApplicationContext();
 
-        String dataJson = readFromFile(context);
+        String dataJson = readFromFile();
         dataTree = getDataTreeFromJson(dataJson);
         prepareRuntimeData();
     }
@@ -72,13 +72,17 @@ public final class DataManager {
         }
     }
 
+    public synchronized List<Country> getDataTree(){
+        return new ArrayList<>(dataTree);
+    }
+
     synchronized void updateDataTree(String updatedDataJson) {
 
         List<Country> newDataTree = getDataTreeFromJson(updatedDataJson);
         if (newDataTree != null){
             dataTree = newDataTree;
             prepareRuntimeData();
-            writeToFile(context, updatedDataJson);
+            writeToFile(updatedDataJson);
         }
     }
 
@@ -113,7 +117,7 @@ public final class DataManager {
         }
     }
 
-    private void writeToFile(Context context, String data) {
+    private void writeToFile(String data) {
         try {
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(
                     context.openFileOutput(TOURS_FILE_NAME, Context.MODE_PRIVATE));
@@ -125,12 +129,11 @@ public final class DataManager {
         }
     }
 
-    private String readFromFile(Context context) {
+    private String readFromFile() {
         String ret = "";
 
         try {
-            InputStream inputStream = context.openFileInput(TOURS_FILE_NAME);
-
+            InputStream inputStream = getDataFileInputStream();
             if ( inputStream != null ) {
                 InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
                 BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
@@ -144,13 +147,20 @@ public final class DataManager {
                 inputStream.close();
                 ret = stringBuilder.toString();
             }
-        } catch (FileNotFoundException e) {
-            Log.e(TAG, "File not found: " + e.toString());
         } catch (IOException e) {
             Log.e(TAG, "Can not read file: " + e.toString());
         }
 
         return ret;
+    }
+
+    protected InputStream getDataFileInputStream(){
+        try {
+            return context.openFileInput(TOURS_FILE_NAME);
+        } catch (FileNotFoundException e) {
+            Log.e(TAG, "File not found: " + e.toString());
+        }
+        return null;
     }
 
     private class TaskUpdateTours extends AsyncTask<Void, Void, Boolean> {

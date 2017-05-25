@@ -18,10 +18,10 @@ public class Tour {
     private City city;
 
     public String getUid() {
-        if (uid != null) {
-            return uid;
+        if (id != null) {
+            return id.toString();
         }
-        return id.toString();
+        return uid;
     }
 
     public void setUid(String uid) {

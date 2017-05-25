@@ -3,14 +3,13 @@ package com.populi.testapp.internal;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.populi.testapp.internal.model.City;
 import com.populi.testapp.internal.model.Country;
 import com.populi.testapp.internal.model.Tour;
-import com.populi.testapp.testapplication.R;
+import com.populi.testapp.R;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

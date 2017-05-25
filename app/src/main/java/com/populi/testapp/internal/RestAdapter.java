@@ -4,7 +4,7 @@ import android.util.Log;
 
 import com.populi.testapp.internal.rest.LoggingInterceptor;
 import com.populi.testapp.internal.rest.Services;
-import com.populi.testapp.testapplication.BuildConfig;
+import com.populi.testapp.BuildConfig;
 import com.populi.testapp.Constants;
 
 import java.util.concurrent.TimeUnit;

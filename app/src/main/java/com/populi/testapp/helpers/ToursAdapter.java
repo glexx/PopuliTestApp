@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.populi.testapp.internal.model.Tour;
-import com.populi.testapp.testapplication.R;
+import com.populi.testapp.R;
 
 import java.util.List;
 

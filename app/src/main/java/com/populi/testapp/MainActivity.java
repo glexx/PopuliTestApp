@@ -11,7 +11,7 @@ import android.widget.Toast;
 import com.populi.testapp.helpers.ToursAdapter;
 import com.populi.testapp.internal.DataManager;
 import com.populi.testapp.internal.model.Tour;
-import com.populi.testapp.testapplication.R;
+import com.populi.testapp.R;
 
 import java.util.List;
 
